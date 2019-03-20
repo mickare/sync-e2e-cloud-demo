@@ -1,0 +1,25 @@
+image: python:3.7
+
+stages:
+  - typing
+  - test
+
+before_script:
+  - mkdir -p .pip
+  - pip install -U pip
+  - pip --cache-dir=.pip install -r requirements.txt
+
+mypy:
+  stage: typing
+  script:
+    - python -m mypy ./shared/src --ignore-missing-imports
+    - python -m mypy ./server/src --ignore-missing-imports
+    - python -m mypy ./client/src --ignore-missing-imports
+  allow_failure: true
+
+unittests:
+  stage: test
+  script:
+    - python -m unittest discover -s ./shared/test
+    - python -m unittest discover -s ./server/test
+    - python -m unittest discover -s ./client/test
