@@ -11,3 +11,5 @@ requests
 
 # For testing
 mypy
+pytest
+pytest-cov
