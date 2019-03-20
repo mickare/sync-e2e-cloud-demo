@@ -1,0 +1,13 @@
+
+# Encryption
+cryptography>=2.6.1
+
+# Server
+hypercorn
+quart
+
+# Client
+requests
+
+# For testing
+mypy
