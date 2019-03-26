@@ -2,6 +2,9 @@
 # Encryption
 cryptography>=2.6.1
 
+# Communication packets
+schematics
+
 # Server
 hypercorn
 quart
