@@ -1,6 +1,7 @@
 from quart import Quart
 
-from cloudsync.server.api import user, scope
+from cloudsync.master.rest.api_v1 import scope
+from cloudsync.master.rest.api_v1 import user
 
 
 class QuartServer(Quart):
